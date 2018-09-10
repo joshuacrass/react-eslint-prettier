@@ -6,6 +6,7 @@
   "scripts": {
     "build": "yarn clean; webpack --config config/webpack-prod-config.js",
     "clean": "rm -rf build/*",
+    "check-staged": "lint-staged",
     "lint": "eslint src -c .eslintrc.json --ext js,jsx",
     "start:dev": "node config/webpack-dev-server.js",
     "start:prod": "yarn build; serve build"
@@ -27,6 +28,8 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.0.0-rc.13",
+    "lint-staged": "^7.2.2",
     "path": "^0.12.7",
     "prettier": "^1.14.2",
     "serve": "^10.0.0",
@@ -41,5 +44,18 @@
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-hot-loader": "^4.3.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint"
+    ],
+    "*.{js,jsx,json,md}": [
+      "prettier --list-different"
+    ]
   }
 }
