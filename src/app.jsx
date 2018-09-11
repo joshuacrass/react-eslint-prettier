@@ -1,6 +1,6 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-
+import Button from 'Components/button';
 import style from './app.css';
 
 const App = () => (
@@ -9,6 +9,7 @@ const App = () => (
     <span role="img" aria-label="rocket ship">
       🚀
     </span>
+    <Button />
   </div>
 );
 

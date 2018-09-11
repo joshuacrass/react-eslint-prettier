@@ -13,5 +13,12 @@
   },
   "env": {
     "browser": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./config/webpack-common-config.js"
+      }
+    }
   }
 }
