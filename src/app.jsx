@@ -5,7 +5,7 @@ import style from './app.css';
 
 const App = () => (
   <div className={style.app}>
-    React Starter{' '}
+    React Starter
     <span role="img" aria-label="rocket ship">
       🚀
     </span>
